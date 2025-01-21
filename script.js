@@ -156,4 +156,13 @@ eventForm.addEventListener("submit", (e) => {
   }
 })
 
+const today = new Date()
+const currentDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`
+
+const initializeTodayEvents = async () => {
+  const events = await getEvents()
+  renderEventsForDate(events, currentDate)
+}
+
+initializeTodayEvents() 
 renderCalendarWithEvents(currentMonth, currentYearCalendar)
