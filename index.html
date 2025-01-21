@@ -31,6 +31,20 @@
       <section id="calendarDates" class="calendar-dates">
         <!-- 날짜 추가-->
       </section>
+
+      <section id="eventList">
+        <div id="selectEventDate"></div>
+        <div id="eventListContent"></div>
+      </section>
+    </section>
+
+    <section id="eventFormSection">
+      <form id="eventForm">
+        <input type="text" id="eventTitle" placeholder="일정 제목" required>
+        <input type="date" id="eventDate" required>
+        <textarea id="eventMemo" placeholder="일정에 관한 내용을 메모해보세요!"></textarea>
+        <button type="submit">등록</button>
+      </form>
     </section>
   </main>
 
@@ -38,6 +52,33 @@
     <p></p>
   </footer>
 
-  <script src="script.js"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyC-ZpjQ4jVLOmHRL6koMqry3OvBrdQL4Mc",
+      authDomain: "simple-calendar-393ba.firebaseapp.com",
+      projectId: "simple-calendar-393ba",
+      storageBucket: "simple-calendar-393ba.firebasestorage.app",
+      messagingSenderId: "757499424703",
+      appId: "1:757499424703:web:87a2e9ecf9b4c504bf3b0a",
+      measurementId: "G-WGQXZDD7V6"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app)
+
+    
+  </script>
+
+  <script type="module" src="script.js"></script>
 </body>
 </html>
